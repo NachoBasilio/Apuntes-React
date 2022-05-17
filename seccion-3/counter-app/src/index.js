@@ -11,4 +11,4 @@ import './index.css';
 const divRoot = document.getElementById('root');//Ahora vamos a obtener el elemento del DOM que queremos renderizar
 
 
-ReactDOM.render(<PrimeraApp />, divRoot);//Ahora vamos a renderizar el componente en el DOM usando el metodo render, primero el componente y luego el elemento del DOM
+ReactDOM.render(<PrimeraApp saludo="Hola, tudo bem?" />, divRoot);//Ahora vamos a renderizar el componente en el DOM usando el metodo render, primero el componente y luego el elemento del DOM
