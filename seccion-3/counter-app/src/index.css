@@ -4,3 +4,10 @@ html, body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding: 50px;
 }
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #3498db;
+    border-radius: 5px;
+}
