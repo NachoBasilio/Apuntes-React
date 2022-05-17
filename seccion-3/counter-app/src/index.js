@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //Ahora vamos a importar el componente que vamos a crear
 import PrimeraApp from './PrimeraApp';
+import CounterApp from './CounterApp';
 //Ahora vamos a importar el css
 import './index.css';
 
@@ -11,4 +12,4 @@ import './index.css';
 const divRoot = document.getElementById('root');//Ahora vamos a obtener el elemento del DOM que queremos renderizar
 
 
-ReactDOM.render(<PrimeraApp saludo="Hola, tudo bem?" />, divRoot);//Ahora vamos a renderizar el componente en el DOM usando el metodo render, primero el componente y luego el elemento del DOM
+ReactDOM.render(<CounterApp value={15} />, divRoot);//Ahora vamos a renderizar el componente en el DOM usando el metodo render, primero el componente y luego el elemento del DOM
