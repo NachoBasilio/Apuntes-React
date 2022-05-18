@@ -11,3 +11,9 @@ button {
     background-color: #3498db;
     border-radius: 5px;
 }
+
+.contenedorDeBotones{
+    display: flex;
+    justify-content: space-around;
+    width: 173px;
+}
