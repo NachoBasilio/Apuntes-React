@@ -1,12 +1,20 @@
-test( 'debe de ser true', () => {
+describe('pruebas de demo.js', () => {
 
-    const isActive = true;
-
-    if (!isActive) {
-        throw new Error('No esta activo');
-    }
-    //Asi se hacen las pruebas en teoria, primero se inicializa la variable y luego se hace el test (Osea estamos afirmando algo)
+    test( 'deben ser iguales los strings', () => {
     
+        //Inicialización de variables
+        const mensaje = "Hola a todos!"
+    
+        //Estimulo
+        const mensaje2 = `Hola a todos!`
+    
+        //Comparación y observación
+        expect( mensaje ).toBe( mensaje2 )
+    
+    })
+
 })
+
+
 
 //jest ya viene instalado cuando hacemos un create-react-app
