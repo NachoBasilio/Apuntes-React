@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import '../assets/css/saludo.css'
+import Cuenta from "./cuenta";
 
 const HeaderCopado = () => {
     const [valor, setValor] = useState(0);
@@ -21,13 +22,7 @@ const HeaderCopado = () => {
     return (
         <div >
             <div className="contenedor">
-                <h1 className="contadorTutulo">Contado{valor === 102 ? ("R"): ("r")}</h1>
-                <div className="contenedorDeBotones">
-                <button onClick={handleClick} name="suma">Contar cositas</button>
-                <div>{valor}</div>
-                {valor > 0 ? (<button onClick={handleClick} name="resta">Descontar Cositas</button>) : null}
-                </div>
-                {valor === 100 ? (<div className="contadorTutulo">Wow, contaste cien cositas</div>) : null}
+                <Cuenta valor={valor} handleClick={handleClick} />
             </div>
         </div>
     );
