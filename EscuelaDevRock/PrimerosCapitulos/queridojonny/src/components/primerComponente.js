@@ -3,15 +3,14 @@ import '../assets/css/saludo.css'
 
 const MiPrimerComponenteConBootstrap = () => {
     let nombre = "Nacho";
+    const handleClick = (e) => {
+        alert(`Hola ${nombre}`);
+        alert(`Hola ${e.target.name}`);//con el e.target.name podemos acceder al nombre del elemento que se ha pulsado, algo que definimos nosotros anteriormente.
+    }
     return (
         <div className="saludo">    
-            <h1>Esto es un super ejemplo de que pude installar bootstrap <span class="badge bg-secondary">{nombre}</span></h1>
-            <button type="button" class="btn btn-primary position-relative">
-                    Inbox
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                99+
-                <span class="visually-hidden">unread messages</span>
-            </span>
+            <button type='button' className="btn btn-primary" name="Boton Loco" onClick={handleClick}>
+                Holanda
             </button>
         </div>
     )
