@@ -1,4 +1,5 @@
 import React from 'react'
+import '../assets/css/saludo.css'
 
 export default function Cuenta({valor, handleClick}) {
   return (
