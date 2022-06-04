@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
+import Listado from '../components/Listado'
 
 export default function Productos() {
     const [productos, setProductos] = useState([])
@@ -18,17 +19,7 @@ export default function Productos() {
     return (
         <div>
             <h1>Productos:</h1>
-            <ul>
-                {productos.map(producto => (
-                    <li key={producto.id}>
-                        <h2>{producto.name}</h2>
-                        <p>{producto.description}</p>
-                        <p>{producto.price}</p>
-                        <p>{producto.category}</p>
-                        <img src={producto.image} alt={producto.name} />
-                    </li>
-                ))}
-            </ul>
+            <Listado productos={productos} />
         </div>
     )
 }
