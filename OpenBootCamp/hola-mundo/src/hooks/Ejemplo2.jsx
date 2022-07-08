@@ -14,11 +14,11 @@ const Ejemplo2 = () => {
         setContador2(contador2 + 1)
     }
 
-    useEffect(()=>{
-        console.log('Cambio de estador del componente')
-        console.log('Mostrando referencia a el elemento del DOM')
+    useEffect(() => {
+        console.log("Cambio de estado")
         console.log(miRef)
-    })
+
+    }, [contador1, contador2]);
     
     return (
         <div>
