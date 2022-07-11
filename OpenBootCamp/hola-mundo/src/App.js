@@ -10,9 +10,7 @@ import DidMountHook from './hooks/lifecycle/DidMount';
 
 function App() {
   return (
-    <div>
       <DidMountHook></DidMountHook>
-    </div>
   );
 }
 
