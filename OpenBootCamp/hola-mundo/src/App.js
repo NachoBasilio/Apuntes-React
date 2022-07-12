@@ -1,6 +1,7 @@
 
 import './App.css';
-import DidMountHook from './hooks/lifecycle/DidMount';
+// import DidMountHook from './hooks/lifecycle/DidMount';
+import DidUpdateHook from './hooks/lifecycle/DidUpdate';
 // import TaskList from './components/container/task_list';
 
 // import Ejemplo3 from './hooks/Ejemplo3';
@@ -10,7 +11,7 @@ import DidMountHook from './hooks/lifecycle/DidMount';
 
 function App() {
   return (
-      <DidMountHook></DidMountHook>
+      <DidUpdateHook></DidUpdateHook>
   );
 }
 
