@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import { Taks } from '../../models/task.class';
+import "../../styles/task.css"
 
 
 const TaskComponents = ({task}) => {
@@ -12,7 +13,7 @@ const TaskComponents = ({task}) => {
     }, [task]);
     return (
         <div>
-            <h2>
+            <h2 className="task-name">
                 Nombre: {task.name}
             </h2>
             <h3>

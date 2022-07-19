@@ -11,6 +11,7 @@ const RegisterForm = () => {
     ]
     
     const [data, setData] = useState(initialData)
+    
     return (
         <div>
             
