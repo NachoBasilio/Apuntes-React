@@ -1,4 +1,5 @@
 import { Counter } from './componets/Counter';
+import Usuario from './componets/Usuario';
 
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
       <hr />
 
       <Counter />
+      <hr />
+      <Usuario />
     </div>
   )
 }
