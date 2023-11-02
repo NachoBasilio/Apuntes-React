@@ -1,6 +1,7 @@
 import { Counter } from './componets/Counter';
 import {TimerPadre} from './componets/TimerPadre';
 import {Usuario} from './componets/Usuario';
+import { ContadorRed } from './componets/ContadorRed';
 
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
 
       <h2 className='text-4xl mt-20'>Use Effect - use Ref</h2>
       <TimerPadre />
+
+      <h2 className='text-4xl mt-20'>Use Reducer</h2>
+      <ContadorRed/>
+
     </div>
   )
 }
