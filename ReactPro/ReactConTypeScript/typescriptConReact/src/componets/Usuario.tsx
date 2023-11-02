@@ -5,7 +5,7 @@ interface Usuario{
     nombre: string;
 }
 
-const Usuario = () => {
+export const Usuario = () => {
     const [usuario, setUsuario] = useState<Usuario>({
         uid: '',
         nombre: ''
@@ -32,4 +32,3 @@ const Usuario = () => {
   )
 }
 
-export default Usuario
