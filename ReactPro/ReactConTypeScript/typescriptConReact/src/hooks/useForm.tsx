@@ -16,6 +16,7 @@ export const useForm = <T extends object>(initState:T) => {
 
     return {
         formulario,
-        handleChange
+        handleChange,
+        ...formulario
     }
 }
