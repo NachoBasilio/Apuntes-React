@@ -1,6 +1,5 @@
-import { useContext } from "react"
 import { Todo } from "../interfaces/interfaces"
-import { todoContext } from "../context/TodoContext"
+import { useTodos } from "../hooks/useTodos"
 
 interface props {
     todo: Todo
@@ -9,7 +8,7 @@ interface props {
 
 export const TodoItem = ({todo}:props) => {
 
-    const {toggleTodo} = useContext(todoContext)
+    const {toggleTodo } = useTodos()
 
     const handleDbClick = ()=>{
         console.log('handleDbClick', todo.desc)

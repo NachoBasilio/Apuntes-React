@@ -1,10 +1,13 @@
 import { TodoProvider } from './context/TodoProvider';
 import { TodoList } from './components/TodoList';
+import { Title } from './components/Title';
 
 export const Todo = () => {
+
+
   return (
     <TodoProvider>
-        <h1 className="text-3xl">TODO: </h1>
+        <Title></Title>
         <TodoList/>
     </TodoProvider>
   )
