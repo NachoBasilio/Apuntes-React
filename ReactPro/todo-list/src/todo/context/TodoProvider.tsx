@@ -33,9 +33,14 @@ interface props {
 export const TodoProvider = ({children}:props) => {
     const [todoState, dispatch] = useReducer(todoReducer, INITIAL_STATE)
 
+    const toggleTodo = (id:string)=>{
+        dispatch({type:"toggleTodo", payload: {id}})
+    }
+
     return (
         <todoContext.Provider value={{
-            todoState
+            todoState,
+            toggleTodo
         }}>
             { children }
         </todoContext.Provider>

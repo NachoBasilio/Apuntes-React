@@ -572,7 +572,15 @@ video {
   margin: auto;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.line-through {
+  text-decoration-line: line-through;
 }

@@ -2,7 +2,8 @@ import { createContext } from "react";
 import { TodoState } from "../interfaces/interfaces";
 
 export type TodoContextProps ={
-    todoState:TodoState
+    todoState:TodoState,
+    toggleTodo: (id:string)=> void
 }
 
 
