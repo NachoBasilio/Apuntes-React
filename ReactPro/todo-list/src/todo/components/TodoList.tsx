@@ -1,14 +1,15 @@
-import { useContext } from "react"
-import { todoContext } from "../context/TodoContext"
 import { TodoItem } from "./TodoItem"
+import { useTodos } from "../hooks/useTodos"
 
 export const TodoList = () => {
-    const {todoState} = useContext(todoContext)
-    const {todos} = todoState
-
+  const {
+    todos, pendingsTodos
+   } = useTodos()
+  
     
   return (
     <h1>
+        <h2>Todos pendientes: {pendingsTodos}</h2>
         <ul>
             {todos.map(todo => <TodoItem key={todo.id} todo={todo}/> )}
         </ul>
