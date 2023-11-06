@@ -1,5 +1,6 @@
 import { Counter } from "./bases/Counter"
 import { CounterBy } from "./bases/CounterBy"
+import { CounterEffect } from './bases/CounterEffect';
 
 export const App = () => {
   const initialValue = 0
@@ -11,6 +12,7 @@ export const App = () => {
 
       <Counter initialValue={initialValue}/>
       <CounterBy/>
+      <CounterEffect/>
     </div>
   )
 }
