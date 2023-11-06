@@ -1,4 +1,5 @@
 import { Counter } from "./bases/Counter"
+import { CounterBy } from "./bases/CounterBy"
 
 export const App = () => {
   const initialValue = 0
@@ -9,6 +10,7 @@ export const App = () => {
       <hr />
 
       <Counter initialValue={initialValue}/>
+      <CounterBy/>
     </div>
   )
 }
