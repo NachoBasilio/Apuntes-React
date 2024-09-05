@@ -12,6 +12,7 @@ interface CounterState {
   posts: Post[];
   increment: (value: number) => void;
   getPosts: () => Promise<void>;
+  clearStore: () => void;
 }
 /**
  * @description Este es un ejemplo de cómo se puede crear un store con Zustand.
