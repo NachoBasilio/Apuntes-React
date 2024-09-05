@@ -13,6 +13,7 @@ interface CounterState {
   increment: (value: number) => void;
   getPosts: () => Promise<void>;
   clearStore: () => void;
+  multiply: (value: number) => void;
 }
 /**
  * @description Este es un ejemplo de cómo se puede crear un store con Zustand.
@@ -23,7 +24,7 @@ interface CounterState {
  * @property {function} increment Incrementa el valor del contador.
  * @param {number} value El valor por el cual incrementar el contador.
  */
-export const useCounterStore = create<CounterState>((set) => ({
+export const useCounterStore = create<CounterState>((set, get) => ({
   count: 10,
   title: "Counter Store",
   posts: [],
@@ -36,7 +37,11 @@ export const useCounterStore = create<CounterState>((set) => ({
       posts
     })));
   },
-  clearStore: () => set({}, true)
+  clearStore: () => set({}, true),
+  multiply: (value: number) => {
+    const { count } = get()
+    set({ count: count * value })
+  }
 }))
 
 
