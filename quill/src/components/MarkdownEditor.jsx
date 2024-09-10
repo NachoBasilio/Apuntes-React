@@ -4,12 +4,10 @@ import QuillMarkdown from 'quilljs-markdown';
 import 'quill/dist/quill.snow.css';
 import 'quilljs-markdown/dist/quilljs-markdown-common-style.css';
 import TurndownService from 'turndown';
-import { marked } from 'marked';
 
-const MarkdownEditor = () => {
+const MarkdownEditor = ({ setHtml }) => {
   const editorRef = useRef(null);
   const [markdown, setMarkdown] = useState('');
-  const [html, setHtml] = useState('');
 
   useEffect(() => {
     const toolbarOptions = [
@@ -31,29 +29,19 @@ const MarkdownEditor = () => {
 
     const turndownService = new TurndownService();
 
-    turndownService.addRule('heading', {
-      filter: ['h1', 'h2'],
-      replacement: function (content, node) {
-        const hLevel = node.nodeName.charAt(1);
-        return `${'#'.repeat(hLevel)} ${content}\n\n`;
+    // Mantén las negritas con '**Texto**' en lugar de '__Texto__'
+    turndownService.addRule('bold', {
+      filter: ['strong'],
+      replacement: function (content) {
+        return `**${content}**`;
       }
     });
 
+    // Utiliza etiquetas HTML <u> para subrayado en lugar de '__Texto__'
     turndownService.addRule('underline', {
       filter: ['u'],
       replacement: function (content) {
-        return `__${content}__`;
-      }
-    });
-
-
-    turndownService.addRule('orderedList', {
-      filter: function (node) {
-        return node.nodeName === 'OL';
-      },
-      replacement: function (content, node) {
-        const items = Array.from(node.children);
-        return '\n' + items.map((item, index) => `${index + 1}. ${item.textContent}`).join('\n') + '\n';
+        return `<u>${content}</u>`;
       }
     });
 
@@ -88,19 +76,12 @@ const MarkdownEditor = () => {
       htmlContent = cleanHtml(htmlContent);
       const markdownContent = turndownService.turndown(htmlContent);
       setMarkdown(markdownContent);
-      setHtml(marked(markdown));
+      setHtml(markdownContent);
     });
 
+  }, [setHtml]);
 
-  }, []);
-
-  return (
-    <>
-      <div ref={editorRef} style={{ height: '400px' }} />
-      <pre>{markdown}</pre>
-
-    </>
-  );
+  return <div ref={editorRef} style={{ height: '400px' }} />;
 };
 
 export default MarkdownEditor;
