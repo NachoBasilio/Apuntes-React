@@ -4,15 +4,15 @@ import MarkdownEditor from "./components/MarkdownEditor"
 import { useState } from "react"
 
 function App() {
-  const [html, setHtml] = useState("")
+  const [markdown, setMarkdown] = useState("")
 
   return (
     <>
       <MarkdownEditor
-        setHtml={setHtml}
+        setMarkdown={setMarkdown}
       />
       <LectorMarkdown
-        html={html}
+        markdown={markdown}
       />
 
     </>

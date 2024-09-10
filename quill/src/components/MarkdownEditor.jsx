@@ -1,13 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Quill from 'quill';
 import QuillMarkdown from 'quilljs-markdown';
 import 'quill/dist/quill.snow.css';
 import 'quilljs-markdown/dist/quilljs-markdown-common-style.css';
 import TurndownService from 'turndown';
 
-const MarkdownEditor = ({ setHtml }) => {
+/**
+ * EditorText is a rich text editor component that uses Quill to allow text formatting and then converts the HTML content to Markdown using TurndownService.
+ *
+ * @param {Function} setMarkdown - Callback function to set the Markdown content. It is called whenever the text changes in the editor.
+ * @returns {JSX.Element} - The rendered Quill editor component.
+ *
+ * @example
+ * <EditorText setMarkdown={markdown => console.log(markdown)} />
+ */
+const MarkdownEditor = ({ setMarkdown }) => {
   const editorRef = useRef(null);
-  const [markdown, setMarkdown] = useState('');
 
   useEffect(() => {
     const toolbarOptions = [
@@ -29,7 +37,6 @@ const MarkdownEditor = ({ setHtml }) => {
 
     const turndownService = new TurndownService();
 
-    // Mantén las negritas con '**Texto**' en lugar de '__Texto__'
     turndownService.addRule('bold', {
       filter: ['strong'],
       replacement: function (content) {
@@ -37,7 +44,6 @@ const MarkdownEditor = ({ setHtml }) => {
       }
     });
 
-    // Utiliza etiquetas HTML <u> para subrayado en lugar de '__Texto__'
     turndownService.addRule('underline', {
       filter: ['u'],
       replacement: function (content) {
@@ -76,10 +82,9 @@ const MarkdownEditor = ({ setHtml }) => {
       htmlContent = cleanHtml(htmlContent);
       const markdownContent = turndownService.turndown(htmlContent);
       setMarkdown(markdownContent);
-      setHtml(markdownContent);
     });
 
-  }, [setHtml]);
+  }, []);
 
   return <div ref={editorRef} style={{ height: '400px' }} />;
 };
